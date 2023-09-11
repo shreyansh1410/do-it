@@ -1,1 +1,1 @@
-A to-do web app that runs on ExpressJS, it can store tasks for your office and work, allows you to add new tasks with a simple click of a button.
+A to-do web app that runs on ExpressJS and uses EJS, it can store tasks for your office and work, allows you to add new tasks with a simple click of a button.
