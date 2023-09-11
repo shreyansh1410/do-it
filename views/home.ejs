@@ -1,0 +1,24 @@
+<%- include("partials/headerForHome.ejs")  %>
+
+<div class="container">
+    <div class="heading">
+        <h1 class="index-h1"><%- date.toLocaleDateString("en-US", options) %></h1>
+    </div>
+    <div class="content">
+        <div class="item"><input type="checkbox" name="" id=""><p>buy groceries</p></div> 
+        <div class="item"><input type="checkbox" name="" id=""><p>refuel the car</p></div>          
+        <div class="item"><input type="checkbox" name="" id=""><p>meet Jacob</p></div>
+        <div class="item"><input type="checkbox" name="" id=""><p>buy gifts for Max's party</p></div>
+                   
+        <% for(i=0;i<listItemArray.length;i++){ %>
+            <div class="item"><input type="checkbox" name="" id=""><p><%= listItemArray[i] %></p></div>
+        <% } %>  
+        
+        <div class="item"><form action="/" method="post">
+            <input type="text" name="newitem" id="newitem" placeholder="add a new item" autocomplete="off">
+            <button id="formbutton" type="submit">+</button>
+        </form></div>         
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>
