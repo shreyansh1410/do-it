@@ -1,9 +1,12 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { connect, Schema, model } from 'mongoose';
+import _ from "lodash";
 
 const app = express();
 const port = 3000;
+
+app.set('view engine' , 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
@@ -70,7 +73,7 @@ app.get("/", (req,res) => {
 
 app.get("/:customListName", (req,res) => {
     // console.log(req.params);
-    const customListName = req.params.customListName;
+    const customListName = _.capitalize(req.params.customListName);
 
     List.findOne({name: customListName})
         .then((foundList) => {
