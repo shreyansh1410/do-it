@@ -55,7 +55,7 @@ app.get("/", (req,res) => {
         if(foundItems.length===0){
             Item.insertMany(defaultItems)
             .then(function(){
-            console.log("successfully inserted database to mongoose");
+            // console.log("successfully inserted database to mongoose");
         })
             .catch(function(err){
             console.log(err);
@@ -84,10 +84,10 @@ app.get("/:customListName", (req,res) => {
                 });
                 list.save();
                 res.redirect("/" + customListName);
-                console.log("doesn't exist");
+                // console.log("doesn't exist");
             }else{
                 res.render("list.ejs", {listTitle: foundList.name, date: currentDate, options: options, listItemArray: foundList.items});
-                console.log("exists");
+                // console.log("exists");
             }
         });
     
