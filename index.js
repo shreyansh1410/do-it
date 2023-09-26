@@ -13,7 +13,7 @@ app.use(express.static("public"));
 
 main().catch(err => console.log(err));
 async function main(){
-    await connect('mongodb://localhost:27017/toDoListDB');
+    await connect('mongodb+srv://shreyansh1410:AxEAMxYxr5VoSvdQ@todolistapp.t4fa6ei.mongodb.net/toDoListDB');
 }
 
 const itemSchema = new Schema({
